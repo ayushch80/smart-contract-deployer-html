@@ -20,7 +20,7 @@
         "constructor(uint NAME_)"
         ];
       const factory = new ethers.ContractFactory(abi, bytecode, signer);
-      const contract = await factory.deploy("AYUSH");
+      const contract = await factory.deploy("100");
       console.log(contract.address)
       await contract.deployTransaction.wait();
       provider.on("network", (newNetwork, oldNetwork) => {
