@@ -20,7 +20,8 @@
         "constructor(uint totalSupply)"
         ];
       const factory = new ethers.ContractFactory(abi, bytecode, signer)
-      const contract = await factory.deploy(1000000000000000000);
+      const _amount = parseUnits("100")
+      const contract = await factory.deploy(_amount);
       console.log(contract.address)
       await contract.deployTransaction.wait();
       provider.on("network", (newNetwork, oldNetwork) => {
